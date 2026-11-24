@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizza Bot — Order</title>
+  <link rel="icon" href="/img/pizza.png">
+  <meta name="theme-color" content="#07070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    // Kommunicate chat widget, connected to the Lex bot
+    (function (d, m) {
+      var kommunicateSettings = { "appId": "6b1a82fc60d1841ee3b64de600930c15", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+  </script>
+</head>
+<body class="page">
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="logo">SS</span>Shoaib Shakeel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/projects/pizza-bot/index.html">About this project</a>
+        <a id="logout" href="#">Log out</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1><img src="/img/pizza.png" alt="">Order a pizza</h1>
+      <p class="lead">You're signed in. Open the chat bubble in the bottom-right corner and say something like <em>"I'd like to order a pizza"</em>. The bot will ask for each choice below.</p>
+    </div>
+
+    <section>
+      <div class="menu">
+        <div class="card"><h3>Triple A Pizza</h3><ul><li>Plain</li><li>Cheese</li><li>Veggie</li><li>Meat Lovers</li></ul></div>
+        <div class="card"><h3>Dominos</h3><ul><li>Classic Margherita</li><li>BBQ Chicken</li><li>Dynamite Chicken</li></ul></div>
+        <div class="card"><h3>Papa Johns</h3><ul><li>Supreme</li><li>Hawaiian</li><li>Stuffed Crust Pizza</li><li>Buffalo Chicken</li></ul></div>
+        <div class="card"><h3>Sizes</h3><ul><li>Small</li><li>Medium</li><li>Large</li></ul></div>
+        <div class="card"><h3>Crust</h3><ul><li>Thin Crust</li><li>Hand Tossed</li><li>Pan</li></ul></div>
+        <div class="card"><h3>Toppings</h3><ul><li>Chicken</li><li>Mushrooms</li><li>Onions</li><li>Beef Crumble</li><li>Bell Peppers</li><li>Olives</li></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/">← Back to portfolio</a>
+      <a href="https://www.flaticon.com/free-icons/pizza" title="pizza icons">Pizza icon by Freepik – Flaticon</a>
+    </div>
+  </footer>
+  <script src="/projects/pizza-bot/auth.js"></script>
+  <script>document.getElementById('logout').href = PizzaAuth.logoutUrl();</script>
+</body>
+</html>

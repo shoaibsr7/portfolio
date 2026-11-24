@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizza Ordering Bot — Shoaib Shakeel</title>
+  <meta name="description" content="A pizza-ordering chatbot built on Amazon Lex, AWS Lambda and Amazon Cognito.">
+  <link rel="icon" href="/img/pizza.png">
+  <meta name="theme-color" content="#07070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="logo">SS</span>Shoaib Shakeel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#projects" aria-current="page">Projects</a>
+        <a href="https://github.com/shoaibsr7/FinalProject_CloudComputing" target="_blank" rel="noopener">Source ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <a class="back" href="/#projects">← All projects</a>
+      <h1><img src="/img/pizza.png" alt="">Pizza Ordering Bot</h1>
+      <ul class="tags">
+        <li>Amazon Lex V2</li><li>AWS Lambda</li><li>Python</li><li>Amazon Cognito</li><li>S3 + CloudFront</li>
+      </ul>
+      <p class="lead">A chatbot that walks you through ordering a pizza: choose a restaurant, size, type, crust and topping in plain conversation. It's behind a sign-up and login page. I built it for a cloud computing course at Dalhousie University in April 2024.</p>
+      <div class="btns">
+        <a class="btn primary" id="try-it" href="#">Sign in and try the bot</a>
+        <a class="btn" href="https://github.com/shoaibsr7/FinalProject_CloudComputing" target="_blank" rel="noopener">View the source ↗</a>
+      </div>
+    </div>
+
+    <section class="prose">
+      <h2>How it works</h2>
+      <ol class="flow">
+        <li><b>Sign in</b>Amazon Cognito handles sign-up, email verification and login.</li>
+        <li><b>Chat</b>A chat widget on the page connects you to an Amazon Lex V2 bot.</li>
+        <li><b>Understand</b>Lex works out what you want and collects the order details.</li>
+        <li><b>Validate</b>A Python Lambda function checks each answer and re-asks if it doesn't match the menu.</li>
+        <li><b>Host</b>The static pages are served from a private S3 bucket through CloudFront over HTTPS.</li>
+      </ol>
+    </section>
+
+    <section class="prose">
+      <h2>What I learned</h2>
+      <ul>
+        <li>Designing a Lex conversation with intents, slots and slot types, and handling invalid answers gracefully.</li>
+        <li>Writing a Lambda code hook that validates slots and returns the right dialog action to Lex.</li>
+        <li>Adding authentication with a Cognito user pool and its hosted sign-in page (OAuth 2.0 authorization code flow).</li>
+        <li>Hosting a static site on S3 behind CloudFront, and locking down the IAM permissions for each piece.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>The menu the bot understands</h2>
+      <div class="menu">
+        <div class="card"><h3>Triple A Pizza</h3><ul><li>Plain</li><li>Cheese</li><li>Veggie</li><li>Meat Lovers</li></ul></div>
+        <div class="card"><h3>Dominos</h3><ul><li>Classic Margherita</li><li>BBQ Chicken</li><li>Dynamite Chicken</li></ul></div>
+        <div class="card"><h3>Papa Johns</h3><ul><li>Supreme</li><li>Hawaiian</li><li>Stuffed Crust Pizza</li><li>Buffalo Chicken</li></ul></div>
+        <div class="card"><h3>Options</h3><ul><li><b>Sizes:</b> Small, Medium, Large</li><li><b>Crust:</b> Thin, Hand Tossed, Pan</li><li><b>Toppings:</b> Chicken, Mushrooms, Onions, Beef Crumble, Bell Peppers, Olives</li></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Shoaib Shakeel</span>
+      <a href="https://www.flaticon.com/free-icons/pizza" title="pizza icons">Pizza icon by Freepik – Flaticon</a>
+    </div>
+  </footer>
+  <script src="/projects/pizza-bot/auth.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('try-it').href = PizzaAuth.loginUrl();
+  </script>
+</body>
+</html>

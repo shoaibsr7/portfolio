@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoaib Shakeel — Software Developer</title>
+  <meta name="description" content="Shoaib Shakeel is a software developer in Halifax, NS, building web applications, cloud infrastructure and games.">
+  <meta name="theme-color" content="#07070d">
+  <meta property="og:title" content="Shoaib Shakeel — Software Developer">
+  <meta property="og:description" content="Web apps for Fisheries and Oceans Canada, PGA 2K25 at 2K Games, AWS automation and more.">
+  <link rel="icon" href="/img/pizza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top"><span class="logo">SS</span>Shoaib Shakeel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="kbd-hint" id="open-palette" type="button" aria-label="Open command menu">⌘K</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="status"><span class="dot"></span>Building at Fisheries and Oceans Canada</div>
+        <h1>Hi, I'm<br><span class="grad-text">Shoaib Shakeel.</span></h1>
+        <p class="role" aria-live="polite"><span class="sr-only">I'm a </span>&gt; <span class="typed" data-words="Software Developer|Cloud & DevOps Engineer|Game Developer (PGA 2K25)|Full-Stack Builder|Dalhousie CS Grad">Software Developer</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="intro">I build web apps that scientists rely on, cloud setups that run themselves, and games people actually play. Move over the background, or click it.</p>
+        <div class="btns">
+          <a class="btn primary magnetic" href="#projects">Explore my work →</a>
+          <a class="btn magnetic" href="https://github.com/shoaibsr7" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub</a>
+          <a class="btn magnetic" href="https://www.linkedin.com/in/shoaibsr" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.3a1.8 1.8 0 1 1 0-3.5 1.8 1.8 0 0 1 0 3.5ZM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.2a3.2 3.2 0 0 1 2.9-1.6c3 0 3.6 2 3.6 4.6V19Z"/></svg>
+            LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-hint" aria-hidden="true"><div class="mouse"></div>scroll</div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><p class="kicker">about</p><h2>From PGA 2K25 to <span class="grad-text">ocean science.</span></h2></div>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>I'm a software developer with a <b>Bachelor of Computer Science (Co-op)</b> from Dalhousie University. Today I'm a <b>Computer Systems Developer and Programmer at Fisheries and Oceans Canada</b>. I build and maintain the web apps scientists and researchers use, including the public meetings and publications portals for the Canadian Science Advisory Secretariat.</p>
+            <p>My co-op terms took me all over the stack. I shipped gameplay features for <b>PGA 2K25</b> at 2K Games. I automated AWS infrastructure at <b>InnovaSea</b>. I also built two educational games that are now on the <b>App Store and Google Play</b>.</p>
+            <p>I'm happiest working anywhere from pixel-level UI to cloud plumbing, and I care about software that's accessible, reliable and easy to use.</p>
+          </div>
+          <div class="stats reveal" style="--d:.15s">
+            <div class="stat"><div class="num"><span class="grad-text" data-count="9200" data-suffix="+">9,200+</span></div><div class="label">publications migrated to a new system</div></div>
+            <div class="stat"><div class="num"><span class="grad-text" data-count="2500" data-suffix="+">2,500+</span></div><div class="label">science meetings migrated</div></div>
+            <div class="stat"><div class="num"><span class="grad-text" data-count="2">2</span></div><div class="label">games live on app stores</div></div>
+            <div class="stat"><div class="num"><span class="grad-text" data-count="3.78" data-decimals="2">3.78</span></div><div class="label">GPA (out of 4.3) at Dalhousie</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><p class="kicker">experience</p><h2>Where I've <span class="grad-text">shipped.</span></h2></div>
+        <ul class="timeline">
+          <li class="reveal">
+            <article class="job" data-tech="Angular Java C# Vue.js Nuxt.js SQL Azure DevOps Git">
+              <span class="when">Nov 2024 — Present</span>
+              <h3>Computer Systems Developer and Programmer</h3>
+              <div class="org">Fisheries and Oceans Canada · Full-time</div>
+              <p>I build and support web apps for the Canadian Science Advisory Secretariat and the Cetacean Sightings Database. I led the migration of 2,500+ meetings, 9,200+ publications and 4,000+ contacts from legacy systems, test against the GC Design System, mentor an intern, and coordinate work in Azure DevOps.</p>
+              <ul class="chips"><li>Angular</li><li>Vue.js</li><li>Nuxt.js</li><li>Java</li><li>C#</li></ul>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="job" data-tech="C# Unity Git">
+              <span class="when">Sept — Dec 2023</span>
+              <h3>Software Engineer (Co-op)</h3>
+              <div class="org">2K Games · Take-Two Interactive</div>
+              <p>I worked on <b>PGA 2K25</b>. I shipped Tee Placement, the Resting Ball Drop option and controller support for PS5, Xbox and PC, and I polished the UI for water hazards, replays and the help menu.</p>
+              <ul class="chips"><li>C#</li><li>Unity</li></ul>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="job" data-tech="WordPress Adobe Suite HTML/CSS Figma">
+              <span class="when">May 2023 — May 2024</span>
+              <h3>Web Developer (Part-time)</h3>
+              <div class="org">Resilience Research Centre</div>
+              <p>I managed several WordPress websites, ran communication campaigns, and designed banners, infographics and reports.</p>
+              <ul class="chips"><li>WordPress</li><li>Adobe Suite</li></ul>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="job" data-tech="AWS Python Bash Terraform Ansible Go Prometheus Grafana Linux">
+              <span class="when">Jan — Apr 2023</span>
+              <h3>Full Stack Developer / DevOps Engineer (Co-op)</h3>
+              <div class="org">InnovaSea</div>
+              <p>I automated AWS with Python (Boto3) and Bash, managed infrastructure as code with Terraform and Ansible, wrote Go middleware with Prometheus metrics for fish-camera data, and built a Grafana dashboard covering the team's AWS services.</p>
+              <ul class="chips"><li>AWS</li><li>Terraform</li><li>Go</li><li>Python</li><li>Grafana</li></ul>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="job" data-tech="Unity C# Figma">
+              <span class="when">May — Aug 2022</span>
+              <h3>Software Developer (Co-op)</h3>
+              <div class="org">STEMWorld Education</div>
+              <p>I designed and built two math and physics learning games that are published on the App Store and Google Play. Teachers still use them in class.</p>
+              <ul class="chips"><li>Game design</li><li>Mobile</li></ul>
+            </article>
+          </li>
+          <li class="reveal">
+            <article class="job" data-tech="Python Java C/C++ SQL AWS GCP Azure Linux Jupyter">
+              <span class="when">2020 — 2024</span>
+              <h3>Bachelor of Computer Science, Co-op</h3>
+              <div class="org">Dalhousie University · GPA 3.78 / 4.3</div>
+              <p>Coursework included AI, machine learning, cloud computing, network security, operating systems, database systems and user interface design.</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal"><p class="kicker">projects</p><h2>Things I've <span class="grad-text">built.</span></h2></div>
+        <div class="filter reveal" role="group" aria-label="Filter projects">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
+          <button type="button" data-filter="ai" aria-pressed="false">AI</button>
+          <button type="button" data-filter="security" aria-pressed="false">Security</button>
+          <button type="button" data-filter="automation" aria-pressed="false">Automation</button>
+        </div>
+        <div class="grid">
+          <article class="card tilt linked reveal" data-cat="cloud ai" data-tech="AWS Python HTML/CSS JavaScript">
+            <div class="card-top"><div class="card-icon"><img src="/img/pizza.png" alt=""></div><span class="badge">live demo</span></div>
+            <h3>Pizza Ordering Bot</h3>
+            <p>A conversational chatbot that takes pizza orders, behind a Cognito sign-up and login. It runs on Amazon Lex, Lambda, S3 and CloudFront.</p>
+            <ul class="tags"><li>Amazon Lex</li><li>Lambda</li><li>Cognito</li><li>Python</li></ul>
+            <div class="card-links"><a class="stretched" href="/projects/pizza-bot/index.html">Case study + demo →</a><a href="https://github.com/shoaibsr7/FinalProject_CloudComputing" target="_blank" rel="noopener">Source ↗</a></div>
+          </article>
+
+          <article class="card tilt linked reveal" style="--d:.08s" data-cat="cloud automation" data-tech="AWS Python">
+            <div class="card-top"><div class="card-icon" aria-hidden="true">☁️</div><span class="badge">co-op</span></div>
+            <h3>AWS Tagging Scripts</h3>
+            <p>Boto3 scripts that copy tags between EC2 instances, EBS volumes and snapshots, so costs can be tracked per project. Built during my InnovaSea co-op.</p>
+            <ul class="tags"><li>Python</li><li>Boto3</li><li>AWS</li></ul>
+            <div class="card-links"><a class="stretched" href="https://github.com/shoaibsr7/AWS" target="_blank" rel="noopener">View on GitHub ↗</a></div>
+          </article>
+
+          <article class="card tilt linked reveal" style="--d:.16s" data-cat="ai" data-tech="Python Jupyter">
+            <div class="card-top"><div class="card-icon" aria-hidden="true">🧠</div><span class="badge">certification</span></div>
+            <h3>Generative AI Model</h3>
+            <p>A generative AI model trained on Colab GPUs and deployed to Hugging Face, for the ShiftKey Labs GenAI certification at Dalhousie.</p>
+            <ul class="tags"><li>Python</li><li>Jupyter</li><li>Hugging Face</li></ul>
+            <div class="card-links"><a class="stretched" href="https://github.com/shoaibsr7/shiftkey_GenAI" target="_blank" rel="noopener">View on GitHub ↗</a></div>
+          </article>
+
+          <article class="card tilt linked reveal" data-cat="automation" data-tech="Python Git">
+            <div class="card-top"><div class="card-icon" aria-hidden="true">🚀</div><span class="badge">tool</span></div>
+            <h3>GitHub Bulk Uploader</h3>
+            <p>A Python script that uploads every folder on your computer to GitHub, recreating the same folder structure, using the GitHub API (PyGithub).</p>
+            <ul class="tags"><li>Python</li><li>GitHub API</li></ul>
+            <div class="card-links"><a class="stretched" href="https://github.com/shoaibsr7/uploading-files-to-github" target="_blank" rel="noopener">View on GitHub ↗</a></div>
+          </article>
+
+          <article class="card tilt linked reveal" style="--d:.08s" data-cat="security" data-tech="Java JavaScript">
+            <div class="card-top"><div class="card-icon" aria-hidden="true">🛡️</div><span class="badge">▶ playable</span></div>
+            <h3>ACL Simulator</h3>
+            <p>Write Cisco-style router rules, fire packets at them, and watch each one get permitted or denied, along with the exact rule that decided it.</p>
+            <ul class="tags"><li>Java</li><li>JavaScript</li><li>Networking</li></ul>
+            <div class="card-links"><a class="stretched" href="/projects/acl/index.html">Try it live →</a><a href="https://github.com/shoaibsr7/acl-simulator" target="_blank" rel="noopener">Source ↗</a></div>
+          </article>
+
+          <article class="card tilt linked reveal" style="--d:.16s" data-cat="security" data-tech="Java JavaScript">
+            <div class="card-top"><div class="card-icon" aria-hidden="true">🔐</div><span class="badge">▶ playable</span></div>
+            <h3>Playfair Cipher</h3>
+            <p>Encrypt and decrypt messages, and watch every letter pair light up on a live 5×5 key square as the cipher works through its rules.</p>
+            <ul class="tags"><li>Java</li><li>JavaScript</li><li>Cryptography</li></ul>
+            <div class="card-links"><a class="stretched" href="/projects/playfair/index.html">Try it live →</a><a href="https://github.com/shoaibsr7/playfair-cipher" target="_blank" rel="noopener">Source ↗</a></div>
+          </article>
+        </div>
+        <p class="more-github reveal"><a class="btn magnetic" href="https://github.com/shoaibsr7?tab=repositories" target="_blank" rel="noopener">See all repos on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><p class="kicker">skills</p><h2>My <span class="grad-text">toolbox.</span></h2><p class="lead">Hover over or tap a skill to see where I've used it.</p></div>
+        <div class="skills">
+          <div class="skill-group reveal"><h3>Languages</h3><ul class="chips"><li tabindex="0">Python</li><li tabindex="0">JavaScript</li><li tabindex="0">Java</li><li tabindex="0">C#</li><li tabindex="0">C/C++</li><li tabindex="0">Go</li><li tabindex="0">SQL</li><li tabindex="0">Bash</li><li tabindex="0">HTML/CSS</li></ul></div>
+          <div class="skill-group reveal" style="--d:.08s"><h3>Frameworks</h3><ul class="chips"><li tabindex="0">Angular</li><li tabindex="0">Vue.js</li><li tabindex="0">Nuxt.js</li><li tabindex="0">React</li><li tabindex="0">Spring Boot</li><li tabindex="0">Unity</li></ul></div>
+          <div class="skill-group reveal" style="--d:.16s"><h3>Cloud &amp; DevOps</h3><ul class="chips"><li tabindex="0">AWS</li><li tabindex="0">Azure</li><li tabindex="0">GCP</li><li tabindex="0">Terraform</li><li tabindex="0">Ansible</li><li tabindex="0">Azure DevOps</li><li tabindex="0">Git</li><li tabindex="0">Prometheus</li><li tabindex="0">Grafana</li></ul></div>
+          <div class="skill-group reveal" style="--d:.24s"><h3>Design &amp; tools</h3><ul class="chips"><li tabindex="0">Figma</li><li tabindex="0">Adobe Suite</li><li tabindex="0">WordPress</li><li tabindex="0">Jupyter</li><li tabindex="0">Linux</li></ul></div>
+        </div>
+        <p class="skill-tip" aria-live="polite">&nbsp;</p>
+      </div>
+    </section>
+
+    <!-- TERMINAL -->
+    <section id="terminal">
+      <div class="wrap">
+        <div class="section-head reveal"><p class="kicker">terminal</p><h2>Prefer the <span class="grad-text">command line?</span></h2><p class="lead">This is a working shell. Type <code>help</code> to get started.</p></div>
+        <div class="terminal reveal">
+          <div class="term-bar"><i></i><i></i><i></i><span>guest@shoaib.dev: ~</span></div>
+          <div class="term-body" id="term-body">
+            <div id="term-out"></div>
+            <label class="term-input"><span class="ps1">guest@shoaib:~$</span><input id="term-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></label>
+          </div>
+        </div>
+        <div class="term-suggest reveal" aria-label="Try a command">
+          <button type="button" data-cmd="whoami">whoami</button>
+          <button type="button" data-cmd="experience">experience</button>
+          <button type="button" data-cmd="projects">projects</button>
+          <button type="button" data-cmd="skills">skills</button>
+          <button type="button" data-cmd="sudo hire shoaib">sudo hire shoaib</button>
+          <button type="button" data-cmd="pizza">pizza</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <p class="kicker">contact</p>
+          <h2>Let's build <span class="grad-text">something.</span></h2>
+          <p class="lead">Want to work together, or just say hi? The best place to reach me is LinkedIn.</p>
+          <div class="btns">
+            <a class="btn primary magnetic" href="https://www.linkedin.com/in/shoaibsr" target="_blank" rel="noopener">Message me on LinkedIn</a>
+            <a class="btn magnetic" href="https://github.com/shoaibsr7" target="_blank" rel="noopener">Follow on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Shoaib Shakeel · Built by hand, hosted on AWS S3 + CloudFront · <a href="https://github.com/shoaibsr7/portfolio" target="_blank" rel="noopener">View source ↗</a></span>
+      <span>Press <kbd>⌘K</kbd> to open the command menu · Try the Konami code ↑↑↓↓←→←→BA</span>
+    </div>
+  </footer>
+
+  <!-- Command palette -->
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command menu">
+    <div class="palette-box">
+      <input id="palette-in" type="text" placeholder="Type a command or search…" autocomplete="off" aria-label="Search commands">
+      <ul id="palette-list" role="listbox"></ul>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACL Simulator — Shoaib Shakeel</title>
+  <meta name="description" content="An interactive simulator for Cisco-style standard and extended router access control lists.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="/img/pizza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="logo">SS</span>Shoaib Shakeel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#projects" aria-current="page">Projects</a>
+        <a href="/projects/playfair/index.html">Playfair</a>
+        <a href="https://github.com/shoaibsr7/acl-simulator" target="_blank" rel="noopener">Source ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <a class="back" href="/#projects">← all projects</a>
+      <h1>🛡️ ACL Simulator</h1>
+      <ul class="tags"><li>Java</li><li>JavaScript</li><li>Networking</li><li>Cisco IOS syntax</li></ul>
+      <p class="lead">Routers use <b>access control lists</b> to decide which packets get through. Write some rules, send some packets, and watch each one get <span class="ok-text">permitted</span> or <span class="deny-text">denied</span>. Rules are checked top to bottom, the first match wins, and anything that matches nothing is dropped by the hidden <code>deny any</code> at the end.</p>
+      <div class="btns">
+        <a class="btn" href="https://github.com/shoaibsr7/acl-simulator" target="_blank" rel="noopener">View the Java source ↗</a>
+      </div>
+    </div>
+
+    <div class="play">
+      <div class="presets" role="group" aria-label="Load an example">
+        <span class="dimtxt">Try an example:</span>
+        <button type="button" data-preset="standard" aria-pressed="true">Standard ACL</button>
+        <button type="button" data-preset="extended" aria-pressed="false">Extended ACL</button>
+        <button type="button" data-preset="office" aria-pressed="false">Protect a server</button>
+      </div>
+
+      <div class="play-grid">
+        <div class="panel">
+          <label class="panel-h" for="acl-in">1 · Access list rules</label>
+          <textarea id="acl-in" class="code" rows="9" spellcheck="false"></textarea>
+          <p class="help">Standard (1–99): <code>access-list 10 permit 172.16.0.0 0.0.255.255</code><br>Extended (100–199): <code>access-list 101 deny tcp any host 10.0.0.5 eq 23</code><br><code>any</code>, <code>host x.x.x.x</code>, wildcard masks, and <code>eq</code> with a port number or name (http, ssh, dns…) all work. <code>!</code> starts a comment.</p>
+        </div>
+        <div class="panel">
+          <label class="panel-h" for="pkt-in">2 · Packets</label>
+          <textarea id="pkt-in" class="code" rows="9" spellcheck="false"></textarea>
+          <p class="help">One per line: <code>source [destination] [protocol] [port]</code>. Standard lists only look at the source.</p>
+          <form id="add-pkt" class="pkt-form" autocomplete="off">
+            <input name="src" placeholder="source IP" aria-label="Source IP">
+            <input name="dst" placeholder="dest IP" aria-label="Destination IP">
+            <select name="proto" aria-label="Protocol"><option value="">proto</option><option>tcp</option><option>udp</option><option>icmp</option></select>
+            <input name="port" placeholder="port" aria-label="Port" inputmode="numeric">
+            <button class="btn" type="submit">+ Add</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="run-bar">
+        <label class="dimtxt" for="acl-num">Apply access list</label>
+        <select id="acl-num"></select>
+        <button class="btn primary" id="run" type="button">▶ Send packets</button>
+        <span id="summary" class="dimtxt" aria-live="polite"></span>
+      </div>
+      <ul id="errors" class="errors" hidden></ul>
+
+      <div class="play-grid results-grid">
+        <div class="panel">
+          <div class="panel-h">3 · Results <span class="dimtxt">(hover one to see the rule that decided it)</span></div>
+          <ul id="results" class="results"></ul>
+        </div>
+        <div class="panel">
+          <div class="panel-h">Rules, in the order the router checks them</div>
+          <ol id="rule-view" class="rule-view"></ol>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose">
+      <h2>How it works</h2>
+      <ul>
+        <li><b>Wildcard masks</b> are the reverse of subnet masks: a <code>0</code> bit means "must match" and a <code>1</code> bit means "don't care". So <code>172.16.0.0 0.0.255.255</code> matches anything in 172.16.x.x.</li>
+        <li><b>Standard lists</b> only look at the source address, so they're usually placed close to the destination.</li>
+        <li><b>Extended lists</b> also check the destination, protocol and port, so they can block one service (like Telnet) and allow everything else.</li>
+        <li>This started as a <b>Java</b> project for a networking course at Dalhousie. The Java version on GitHub reads rules and packets from text files. This page runs the same logic in JavaScript, right in your browser.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/">← back to the portfolio</a>
+      <span>© Shoaib Shakeel</span>
+    </div>
+  </footer>
+  <script src="/projects/acl/acl.js" defer></script>
+</body>
+</html>

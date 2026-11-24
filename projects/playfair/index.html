@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playfair Cipher — Shoaib Shakeel</title>
+  <meta name="description" content="Encrypt and decrypt with the Playfair cipher and watch every step on a live 5×5 key square.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="/img/pizza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="logo">SS</span>Shoaib Shakeel</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#projects" aria-current="page">Projects</a>
+        <a href="/projects/acl/index.html">ACL Simulator</a>
+        <a href="https://github.com/shoaibsr7/playfair-cipher" target="_blank" rel="noopener">Source ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <a class="back" href="/#projects">← all projects</a>
+      <h1>🔐 Playfair Cipher</h1>
+      <ul class="tags"><li>Java</li><li>JavaScript</li><li>Cryptography</li></ul>
+      <p class="lead">The Playfair cipher encrypts <b>pairs of letters</b> using a 5×5 grid built from a secret key. It was used in the Boer War and World War I. Type a key and a message, then click any pair to see exactly how it was transformed.</p>
+      <div class="btns"><a class="btn" href="https://github.com/shoaibsr7/playfair-cipher" target="_blank" rel="noopener">View the Java source ↗</a></div>
+    </div>
+
+    <div class="play">
+      <div class="presets" role="group" aria-label="Mode">
+        <button type="button" data-mode="encrypt" aria-pressed="true">🔒 Encrypt</button>
+        <button type="button" data-mode="decrypt" aria-pressed="false">🔓 Decrypt</button>
+      </div>
+
+      <div class="pf-grid">
+        <div class="panel">
+          <label class="panel-h" for="key">Secret key</label>
+          <input id="key" class="code-input" value="PLAYFAIR EXAMPLE" autocomplete="off" spellcheck="false">
+          <label class="panel-h" id="text-label" for="text" style="margin-top:18px">Message to encrypt</label>
+          <textarea id="text" class="code" rows="3" spellcheck="false">Hide the gold in the tree stump</textarea>
+          <div class="panel-h" style="margin-top:18px"><span id="out-label">Ciphertext</span></div>
+          <div class="output"><code id="output"></code></div>
+          <div class="btns" style="margin-top:14px">
+            <button class="btn primary" id="step" type="button">▶ Step through</button>
+            <button class="btn" id="swap" type="button">⇅ Reverse it</button>
+            <button class="btn" id="copy" type="button">Copy</button>
+          </div>
+        </div>
+
+        <div class="panel square-panel">
+          <div class="panel-h">Key square <span class="dimtxt">(key letters first, then the rest of the alphabet)</span></div>
+          <div id="square" class="square" aria-label="5 by 5 key square"></div>
+          <div class="legend"><span><i class="lg src"></i>input pair</span><span><i class="lg dst"></i>output pair</span><span><i class="lg key"></i>from your key</span></div>
+          <p id="explain" class="explain" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-h">Letter pairs <span class="dimtxt">(click one, or use ← → keys)</span></div>
+        <div id="pairs" class="pairs"></div>
+      </div>
+    </div>
+
+    <section class="prose">
+      <h2>The rules</h2>
+      <ul>
+        <li><b>Build the square:</b> write the key's letters without repeats, then fill in the rest of the alphabet. I and J share a cell so it fits in 25.</li>
+        <li><b>Split into pairs:</b> if a pair would have the same letter twice, put an <code>X</code> between them. If one letter is left at the end, pad it with <code>X</code>.</li>
+        <li><b>Same row:</b> take the letter to the right of each (to the left when decrypting).</li>
+        <li><b>Same column:</b> take the letter below each (above when decrypting).</li>
+        <li><b>Rectangle:</b> swap each letter for the corner in its own row on the other side.</li>
+        <li>This started as a <b>Java</b> project at Dalhousie, with methods to build the key matrix, encrypt and decrypt. This page runs the same algorithm in JavaScript so you can watch it work.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/">← back to the portfolio</a>
+      <span>© Shoaib Shakeel</span>
+    </div>
+  </footer>
+  <script src="/projects/playfair/playfair.js" defer></script>
+</body>
+</html>
